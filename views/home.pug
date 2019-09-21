@@ -2,3 +2,8 @@ include includes/layout.pug
 
 block content
 h1 Day Planner Menu
+ul
+    a(href="http://")
+    each day in days
+        li #{day},  #{month},  #{date},  #{year}
+        br
