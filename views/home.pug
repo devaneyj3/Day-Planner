@@ -6,6 +6,6 @@ p Here is the weather for #{weather.name}:
 p The temperature is #{weather.main.temp}	&#8457;
 ul
     a(href="http://")
-    each day in days
-        li #{day},  #{month},  #{date},  #{year}
+    each date in dates
+        li #{date}
         br
