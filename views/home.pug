@@ -5,7 +5,7 @@ h1 Day Planner Menu
 p Here is the weather for #{weather.name}:
 p The temperature is #{weather.main.temp}	&#8457;
 ul
-    a(href="http://")
-    each date in dates
-        li #{date}
+    each date in dateList
+        a(href="http://")
+            li #{date}
         br

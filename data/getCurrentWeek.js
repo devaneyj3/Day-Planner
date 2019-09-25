@@ -1,7 +1,9 @@
 //jshint esversion:6
 
+let moment = require('moment');
+
  module.exports.getFullDate = function() {
-     let datesArr = [];
+    let dates = [];
 
     const day = new Date();
 
@@ -16,9 +18,8 @@
 
     for( i = 0; i < 10; i++) {
         let curDate = new Date(year, month, dayNum + i);
-        datesArr.push(curDate);
-        console.log(curDate);
+        dates.push(moment(curDate).format('MM/DD/YYYY'));
     }
     //return the variables
-    return { datesArr };
+    return { dates };
  };
