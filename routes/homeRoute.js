@@ -21,9 +21,10 @@ route.get('/', (req, res) => {
   });
 });
 
+//get indivual page for the dates based on the variable "ID"
 route.get("/datePage/:id", ( req, res ) => {
   let date = req.params.id;
-  date = dateList[date];
+  date = dateList[date]; //find the index of the date array based on the id variable exp: 0, 1, 2..
 
   res.render("datePage", { date });
 });
