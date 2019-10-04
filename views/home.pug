@@ -2,10 +2,10 @@ include includes/layout.pug
 
 block content
 h1 Day Planner Menu
-p Here is the weather for #{weather.name}:
-p The temperature is #{weather.main.temp}	&#8457;
+//- p Here is the weather for #{weather.name}:
+//- p The temperature is #{weather.main.temp}	&#8457;
 ul
-    each date in dateList
-        a(href="datePage/" + dateList.indexOf(date))
+    each date in dates
+        a(href="/datePage/" + dates.indexOf(date))
             li #{date}
         br
