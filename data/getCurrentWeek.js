@@ -2,9 +2,7 @@
 
 let moment = require('moment');
 
- module.exports.getFullDate = function() {
-    let dates = [];
-
+ module.exports.getFullDate = function(arr) {
     const day = new Date();
 
     //get number 0-11 for month
@@ -18,8 +16,6 @@ let moment = require('moment');
 
     for( i = 0; i < 10; i++) {
         let curDate = new Date(year, month, dayNum + i);
-        dates.push(moment(curDate).format('MM/DD/YYYY'));
+        arr.push(moment(curDate).format('MM/DD/YYYY'));
     }
-    //return the variables
-    return { dates };
  };
