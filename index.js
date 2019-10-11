@@ -9,6 +9,8 @@ const homeRoute = require('./routes/homeRoute');
 
 
 app.use(express.static('views'));
+app.use(express.static('client'));
+
 app.set('view engine', 'pug');
 
 // middleware for bodyParser

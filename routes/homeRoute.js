@@ -12,6 +12,7 @@ let dates = [];
 route.get('/', (req, res) => {
     
     week.getFullDate(dates);
+    console.log(dates);
 
     //get current weather from API
     getData ( ( data ) => {
