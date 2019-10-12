@@ -5,6 +5,7 @@ const route = express.Router();
 const week = require('../data/getCurrentWeek');
 
 const getData = require("../data/getAPIData").getData;
+const convertWeather = require("../data/convertWeather").kelvinToFahrenheit;
 
 let dates = [];
 
@@ -14,7 +15,8 @@ week.getFullDate(dates);
 route.get('/', (req, res) => {
     //get current weather from API
     getData ( ( data ) => {
-      res.render('home', { dates, data });
+      const temp = Math.round(convertWeather(data.main.temp));
+      res.render('home', { dates, data, temp });
    
     });
 });
