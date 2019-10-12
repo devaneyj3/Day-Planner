@@ -9,7 +9,7 @@ const homeRoute = require('./routes/homeRoute');
 
 
 app.use(express.static('views'));
-app.use(express.static('client'));
+app.use(express.static('public'));
 
 app.set('view engine', 'pug');
 
