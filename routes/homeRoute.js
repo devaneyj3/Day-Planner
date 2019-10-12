@@ -8,11 +8,10 @@ const getData = require("../data/getAPIData").getData;
 
 let dates = [];
 
+week.getFullDate(dates);
+
 //render the main page
 route.get('/', (req, res) => {
-    
-    week.getFullDate(dates);
-
     //get current weather from API
     getData ( ( data ) => {
       res.render('home', { dates, data });
