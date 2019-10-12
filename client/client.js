@@ -1,13 +1,26 @@
 //jshint esversion: 6
 
+// LOOP OVER NODELIST AND APPLY BOLD TO TODAY'S DATE
+
 let nodeList = document.querySelectorAll('li');
-console.log(nodeList);
 
+/*
+* Have following code in css folder
+*/
+let a = document.querySelectorAll('a');
 
-for (var dateEl of nodeList) {
-    console.log(dateEl);
-    //dateEl.style.fontWeight = "900";
+for( let el of a ) {
+    el.style.color = 'black';
+    el.style.textDecoration = 'none';
 }
 
+//get the current date
 let date = new Date();
-console.log(date.toDateString());
+let today = date.toLocaleDateString();
+
+for (var dateEl of nodeList) {
+    if(dateEl.textContent == today) {
+        dateEl.style.fontWeight = "900";
+        dateEl.textContent = 'Today';
+    }
+}
