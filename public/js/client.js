@@ -21,13 +21,12 @@ function addStyleToList() {
     for (var dateEl of nodeList) {
         if(dateEl.textContent == today) {
             dateEl.style.fontWeight = "900";
-            dateEl.textContent = 'Today';
         }
     }
 }
 
 async function fetchWeatherData(val, key) {
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${val},US&appid=${key}`;
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?zip=${val},US&appid=${key}`;
     const fetchResult = fetch(weatherURL);
     const response = await fetchResult;
     const jsonData = await response.json();
