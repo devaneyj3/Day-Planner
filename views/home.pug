@@ -1,12 +1,21 @@
 include includes/layout.pug
 
 block content
-h1 Day Planner Menu
-p Here is the weather for #{data.name}:
-p The temperature is #{temp}	&#8457;
-ul
-    each date in dates
-        a(href="/datePage/" + dates.indexOf(date))
-            li.date #{date}
-        br
-include includes/footer.pug        
+.container
+    .row
+        .col.s12
+            h1 Day Planner Menu
+            p Here is the weather for #{data.name}:
+            p The temperature is #{temp}	&#8457;
+            ul.list-group
+                each date in dates
+                    - let dateIndex = dates.indexOf(date)
+                    - let isToday = date === (new Date()).toLocaleDateString()
+                    if isToday
+                        a(href="/datePage/" + dateIndex)
+                            li.date.list-group-item.active #{date}
+                    else
+                        a(href="/datePage/" + dateIndex)
+                            li.date.list-group-item #{date}
+                    br
+include includes/footer.pug

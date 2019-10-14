@@ -16,4 +16,6 @@ function addStyleToList() {
     }
 }
 
-addStyleToList();
+$(document).ready(function (event) {
+    addStyleToList();
+});
