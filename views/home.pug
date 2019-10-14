@@ -5,7 +5,12 @@ block content
     .jumbotron.jumbotron-fluid
         .container
             h1.display-3 Day Planner Home
-            p.lead Here is the weather for #{data.name}: The temperature is #{temp}	&#8457;
+            p.lead.city Here is the weather for:
+            p.lead.temperature
+            .input-group.mb-3
+                input.location.form-control(type="text", placeholder="City Zipcode")
+                .input-group-append
+                    button.submitLocation.btn.btn-outline-secondary(type="button") Search
     .row
         .col.s12
             each date in dates
