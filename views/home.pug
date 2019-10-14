@@ -2,20 +2,28 @@ include includes/layout.pug
 
 block content
 .container
+    .jumbotron.jumbotron-fluid
+        .container
+            h1.display-3 Day Planner Home
+            p.lead Here is the weather for #{data.name}: The temperature is #{temp}	&#8457;
     .row
         .col.s12
-            h1 Day Planner Menu
-            p Here is the weather for #{data.name}:
-            p The temperature is #{temp}	&#8457;
-            ul.list-group
-                each date in dates
-                    - let dateIndex = dates.indexOf(date)
-                    - let isToday = date === (new Date()).toLocaleDateString()
-                    if isToday
-                        a(href="/datePage/" + dateIndex)
-                            li.date.list-group-item.active #{date}
-                    else
-                        a(href="/datePage/" + dateIndex)
-                            li.date.list-group-item #{date}
-                    br
+            each date in dates
+                - let dateIndex = dates.indexOf(date)
+                - let isToday = date === (new Date()).toLocaleDateString()
+                if isToday
+                    .card
+                        .card-body
+                            h5.card-title Today
+                            .card-text There would be a short description of the day's activities here possibly
+
+                            a.card-title(href="/datePage/" + dateIndex) See Plan
+                else
+                    .card
+                        .card-body
+                            h5.card-title #{date}
+                            .card-text There would be a short description of the day's activities here possibly
+
+                            a.card-title(href="/datePage/" + dateIndex) See Plan
+                br
 include includes/footer.pug
